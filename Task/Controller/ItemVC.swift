@@ -106,12 +106,13 @@ class ItemVC: UIViewController {
                 service.getDataWith { (result) in
                     switch result {
                     case .Success(let itemArray):
-                        //                        print(items)
+                        //  print(items)
                         for item in itemArray{
                             let itemDic = item
-                            //                            print(itemDic)
-                            //                            self.clearData()
+                            //  print(itemDic)
+                            // self.clearData()
                             self.saveInCoreDataWith(dictionary: itemDic)
+                            self.fetchData(searchText: searchText)
                             self.mTableView.reloadData()
                         }
                         
